@@ -868,14 +868,14 @@
         e.preventDefault();
         
 	        // Check if all required fields are filled
-        const username = document.getElementById("name").value;
+        const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
 
         if (name && email && message) {
             // All required fields are filled, proceed with form submission
-            set(ref(db, 'user/' + name), {
-                username: name,
+            set(ref(db, 'user/' + document.getElementById("name").value), {
+                name: name,
                 email: email,
                 message: message
             });
