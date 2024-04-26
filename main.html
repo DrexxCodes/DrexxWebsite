@@ -874,7 +874,7 @@
 
         if (name && email && message) {
             // All required fields are filled, proceed with form submission
-            set(ref(db, 'user/' + username), {
+            set(ref(db, 'user/' + name), {
                 username: name,
                 email: email,
                 message: message
