@@ -753,7 +753,7 @@
                             <a href="/cdn-cgi/l/email-protection#750c1a00075818141c19351218141c195b161a18" class="email animate-me"><span class="__cf_email__" data-cfemail="c6bfa9b3b4ebaba7afaa86a1aba7afaae8a5a9ab">mo22445boss@gmail.com</span></a>
                             <br><br>
                             <div class="meeting">
-                                <div class="book"><a>Book a Meeting</a></div>
+                                <div class="book"><a href="https://calendly.com/tristarservices/consulting">Book a Meeting</a></div>
                             </div>
 
                         </address>
@@ -843,56 +843,50 @@
 
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import {
-            initializeApp
-        } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import {
-            getDatabase,
-            ref,
-            set,
-            get,
-            child
-        } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+            // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCkspIIUM-efZV11dn81hBIS5RdcjsNYYk",
-            authDomain: "contactform-c4a4e.firebaseapp.com",
-            databaseURL: "https://contactform-c4a4e-default-rtdb.firebaseio.com",
-            projectId: "contactform-c4a4e",
-            storageBucket: "contactform-c4a4e.appspot.com",
-            messagingSenderId: "486536765007",
-            appId: "1:486536765007:web:734d6d0b4638432087543a"
-        };
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCkspIIUM-efZV11dn81hBIS5RdcjsNYYk",
+        authDomain: "contactform-c4a4e.firebaseapp.com",
+        databaseURL: "https://contactform-c4a4e-default-rtdb.firebaseio.com",
+        projectId: "contactform-c4a4e",
+        storageBucket: "contactform-c4a4e.appspot.com",
+        messagingSenderId: "486536765007",
+        appId: "1:486536765007:web:734d6d0b4638432087543a"
+    };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
 
-        //get ref to database services
-        const db = getDatabase(app);
+    //get ref to database services
+    const db = getDatabase(app);
 
-        document.getElementById("submit").addEventListener('click', function(e) {
-            e.preventDefault();
-            set(ref(db, 'user/' + document.getElementById("name").value), {
+    document.getElementById("submit").addEventListener('submit', function(e){
+        e.preventDefault();
+        
+	        // Check if all required fields are filled
+        const username = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("message").value;
 
-                username: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-
+        if (name && email && message) {
+            // All required fields are filled, proceed with form submission
+            set(ref(db, 'user/' + username), {
+                username: name,
+                email: email,
+                message: message
             });
-            //   enable alert
-            document.querySelector(".alert").style.display = "block";
-
-            //   remove the alert
-            setTimeout(() => {
-                document.querySelector(".alert").style.display = "none";
-            }, 3000);
-
-            //   reset the form
+            alert("Your messaged is sent. I shall reply via mail!");
+            // Reset the form
             document.getElementById("contactMe").reset();
-
-        })
+        } else {
+            // Required fields are not filled, show an error message or take appropriate action
+            alert("Please fill in all required fields.");
+        }
+    });
     </script>
 
 
