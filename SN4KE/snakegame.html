@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet" href="/SN4KE/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="name">
+            <h4>Snaker Snake</h4>
+        </div>
+    
+    <div class="container">
+        <div class="score">
+            score: <span class="score_val">0</span>
+        </div>
+        <div class="canvas-wrapper">
+            <canvas width="400" height="400"></canvas>
+        </div>
+        <div class="controls">
+            <button class="btn-start">Start</button>
+            <button class="btn-pause">Pause</button>
+            <div class="range range-difficulty">
+                <label for="difficulty">Speed</label>
+                <div class="range_inputWrapper">
+                    <span class="range_inputSlider"></span>
+                    <div class="range_inputValue"></div>
+                    <input type="range" name="difficulty" value="8" min="1" max="10" step="1">
+                </div>
+            </div>
+
+            <div class="range range-columns">
+                <label for="columns">Cells</label>
+                <div class="range_inputWrapper">
+                    <span class="range_inputSlider"></span>
+                    <div class="range_inputValue"></div>
+                    <input type="range" name="columns" value="20" min="10" max="100" step="10">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="names">
+            <h4>@drexxcodes</h4>
+        </div>
+  
+    <div class="alert">
+  <button onclick="openCustomAlert()">Game Rules</button>
+</div>
+  <div id="customAlert" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCustomAlert()">&times;</span>
+      <h2>Rules Of Snaker Snake</h2>
+      <ul>
+          <li>The game is infinite which means it has no end and you can play as long as you want.</li>
+          <br>
+          <li>To gain points you need to feed on the tiny circles that appear on the screen. Note that when a circle spawns on the canvas, it disapperas after 20 seconds if you don't eat it.</li>
+          <br>
+          <li>Unlike the typical Snake Xenzia, you don't lose when you go out of the screen. You will loose however if any part of your body makes contact with itself.</li>
+          <br>
+          <li>Have fun!!!</li>
+        
+        </ul>
+    </div>
+  </div>
+    
+   
+    <script src="/SN4KE/main.js"></script>
+</body>
+
+</html>
