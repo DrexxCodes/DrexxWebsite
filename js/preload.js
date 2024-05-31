@@ -65,5 +65,5 @@ addEventListener("mousemove", (e) => {
 
 //Change of Page
 function nextPage() {
-    window.location.href = "main.html";
+    window.location.href = "main";
 }
