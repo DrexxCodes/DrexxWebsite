@@ -2,15 +2,15 @@
   "routes": [
     {
       "src": "main",
-      "dest": "main.htm"
+      "dest": "/main.htm"
     },
     {
       "src": "tourly",
-      "dest": "tourly.html"
+      "dest": "/tourly.html"
     },
     {
       "src": "blog",
-      "dest": "blog.html"
+      "dest": "/blog.html"
     },
     {
       "src": "/",
