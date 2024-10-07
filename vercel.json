@@ -1,7 +1,20 @@
 {
   "routes": [
-    { "src": "/main", "dest": "/main.htm" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "tourly", "dest": "/tourly.html" }
+    {
+      "src": "main",
+      "dest": "main.htm"
+    },
+    {
+      "src": "tourly",
+      "dest": "tourly.html"
+    },
+    {
+      "src": "blog",
+      "dest": "blog.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
   ]
 }
